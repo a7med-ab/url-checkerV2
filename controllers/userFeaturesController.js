@@ -188,7 +188,7 @@ export const RequestremoveLink = handleAsync (async (req, res,next) => { //user
             return next(new appError("unauthorized user",403))
         }
 
-        await RemoveLinkRequestModel.deleteOne({url})
+        await RemoveLinkRequestModel.create({url})
         return res.send({ msg: 'url requested to be deleted succesfully ' });
         //logic here 
 
