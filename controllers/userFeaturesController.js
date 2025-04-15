@@ -153,7 +153,7 @@ export const RequestaddLink = handleAsync (async (req, res,next) => { //user
         const decoded = await verifyToken(token, 'a7med');
         const email = decoded.email;
 
-        if (decoded.role !== "user" && decoded.is_Sector !== false) {
+        if (decoded.role !== "sector" && decoded.is_Sector !== false) {
             return next(new appError("unauthorized user",403))
         }
 
@@ -184,7 +184,7 @@ export const RequestremoveLink = handleAsync (async (req, res,next) => { //user
 
         const decoded = await verifyToken(token, 'a7med');
 
-        if (decoded.role !== "user"&& decoded.is_Sector !== false) {
+        if (decoded.role !== "sector"&& decoded.is_Sector !== false) {
             return next(new appError("unauthorized user",403))
         }
 
@@ -212,7 +212,7 @@ export const RequestModifyLink = handleAsync (async (req, res,next) => { //user
 
         const decoded = await verifyToken(token, 'a7med');
 
-        if (decoded.role !== "user"&& decoded.is_Sector !== false) {
+        if (decoded.role !== "sector"&& decoded.is_Sector !== false) {
             return next(new appError("unauthorized user",403))
         }
 
